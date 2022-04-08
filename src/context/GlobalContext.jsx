@@ -7,7 +7,7 @@ const initialState = {
   summery: {
     income: 0,
     expense: 0,
-    balance: income - expense
+    balance: 0
   }
 }
 
@@ -37,13 +37,13 @@ export default function GlobalProvider({children}) {
   }
   
   
-  
   const value = {
     transactions: state.transactions,
     summery: state.summery,
     transactionModal: state.transactionModal,
     toggleTransaction,
-    AddTransaction
+    AddTransaction,
+    calculateSummery
   }
   
   return (
