@@ -1,0 +1,28 @@
+.container{
+  height: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+
+.left{
+  display: flex;
+  margin-left: 12px;
+}
+.category {
+  width: 80px;
+  overflow-x: scroll;
+}
+.transactionName{
+  
+}
+.right{
+  margin-right: 12px;
+}
+.transaction.income {
+  color: var(--color-income);
+}
+.transaction.expense {
+  color: var(--color-expense);
+}

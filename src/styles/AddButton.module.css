@@ -1,0 +1,14 @@
+.container{
+  height: 50px;
+  width: 50px;
+  position: fixed;
+  right: 16px;
+  bottom: 16px;
+  background: var(--color-input-border);
+  font-size: 35px;
+  color: #fbfbfb;
+  border-radius: 50%;
+  box-shadow: var(--box-shadow);
+  user-select: none;
+  z-index: 0;
+}

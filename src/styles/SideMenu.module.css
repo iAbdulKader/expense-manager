@@ -1,0 +1,25 @@
+.container{
+  width: 200px;
+  /*background: #49416D;*/
+  background-image: linear-gradient(#4776E6, #8E54E9);
+  height: calc(100vh - 40px);
+  position: fixed;
+  top: 40px;
+  left: -200px;
+  transform: translateX(0);
+  transition: transform 250ms ease-in-out;
+  box-shadow: var(--box-shadow);
+  color: #fbfbfb;
+  z-index: 1;
+}
+
+.wrapper{
+  margin: 20px 10px;
+}
+.outerBox{
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+}

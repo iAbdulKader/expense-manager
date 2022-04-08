@@ -1,0 +1,52 @@
+.container{
+  background: var(--color-bg-secondary);
+  max-width: 500px;
+  margin: 0 auto;
+  margin-top: 6px;
+  color: #fbfbfb;
+  border-bottom: 0.5px solid #717171;
+}
+.header{
+  display: flex;
+  justify-content: space-between;
+  height: 25px;
+  border-top: 0.5px solid #717171;
+  border-bottom: 0.5px solid #717171;
+}
+.header > div{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.left{
+  margin-left: 12px;
+  gap: 5px;
+}
+.date{
+  font-size: 13px;
+}
+.day{
+  background: #808080;
+  font-size: 10px;
+  padding: 3px 3px;
+  border-radius: 3px;
+  width: 20px;
+  text-align: center;
+}
+.fulldate{
+  font-size: 9px;
+}
+.right{
+  margin-right: 12px;
+  gap: 50px;
+}
+.right > div{
+  font-size: 12px;
+}
+.income{
+  color: var(--color-income);
+}
+.expense{
+  color: var(--color-expense);
+}
