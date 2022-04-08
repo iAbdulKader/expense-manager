@@ -4,11 +4,6 @@ import reducer from "./Reducer";
 const initialState = {
   transactions: {},
   transactionModal: false,
-  summery: {
-    income: 0,
-    expense: 0,
-    balance: 0
-  }
 }
 
 export const GlobalContext = createContext(initialState);

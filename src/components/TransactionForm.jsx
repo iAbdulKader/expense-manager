@@ -18,15 +18,25 @@ export default function TransactionForm({ add, type = "expense", data = {} }) {
   
   
   const onSubmit = () => {
+    if(!name.trim() || !category.trim() || !amount){
+      return
+    }
+    
     AddTransaction({
       id: Date.now(),
       type: active,
       time,
       category,
       name,
-      amount: amount,
+      amount,
       note
     }, date)
+    
+    setName("");
+    setCategory("");
+    setAmount("");
+    setNote("");
+    setActive("expense")
     
     toggleTransaction()
   }

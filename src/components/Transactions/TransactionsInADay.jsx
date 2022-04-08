@@ -1,13 +1,8 @@
-import { useContext } from "react";
-import { GlobalContext } from "../../context/GlobalContext";
 import styles from "../../styles/TransactionsInADay.module.css";
 import Transaction from "./Transaction";
 import dateAndTime from "../../lib/dateConverter";
-import dayIncomeExpense from "../../lib/dayIncomeExpense";
 
-export default function TransactionsInADay({ date }) {
-  
-  const { transactions } = useContext(GlobalContext);
+export default function TransactionsInADay({ date, data }) {
   
   const getOnlyDate = (date) => {
     return date.split("-")[2]
@@ -27,15 +22,18 @@ export default function TransactionsInADay({ date }) {
         </div>
         
         <div className={styles.right}>
-          <div className={styles.income}>{dayIncomeExpense(transactions, date).income}</div>
-          <div className={styles.expense}>{dayIncomeExpense(transactions, date).expense}</div>
+          <div className={styles.income}>{data.income}</div>
+          <div className={styles.expense}>{data.expense}</div>
         </div>
       </div>
       
       <div>
       {
-        transactions[date].map(transaction => (
-          <Transaction data={transaction} />
+        data.transactionsArr.map(transaction => (
+          <Transaction 
+            data={transaction}
+            key={transaction.id}
+          />
         ))
       }
       </div>

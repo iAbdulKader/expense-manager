@@ -12,6 +12,7 @@ export default function Transactions() {
           <TransactionsInADay
             key={transaction}
             date={transaction}
+            data={transactions[transaction]}
           />
         ))
     }

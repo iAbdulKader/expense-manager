@@ -1,5 +1,4 @@
 import produce from "immer";
-import dayIncomeExpense from "../lib/dayIncomeExpense";
 
 export default function reducer(state, action) {
   
@@ -12,15 +11,21 @@ export default function reducer(state, action) {
     case 'ADD_TRANSACTION':
       return produce(state, draft => {
         if(!draft.transactions[action.date]){
-          draft.transactions[action.date]= [action.payload]
+          draft.transactions[action.date] = {
+               income: 0,
+               expense: 0,
+               balance: 0,
+               transactionsArr: [action.payload]
+            }
         } else {
-          draft.transactions[action.date].push(action.payload)
+          draft.transactions[action.date].transactionsArr.push(action.payload)
         }
-      })
-      
-    case 'CALCULATE_SUMMERY':
-      return produce(state, draft => {
         
+        if(action.payload.type === "income"){
+          draft.transactions[action.date].income += +action.payload.amount;
+        } else {
+          draft.transactions[action.date].expense += +action.payload.amount;
+        }
       })
     
     default:
