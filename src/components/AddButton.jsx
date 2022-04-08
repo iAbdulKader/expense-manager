@@ -1,16 +1,14 @@
-import { useContext } from "react";
-import { GlobalContext } from "../context/GlobalContext";
+import { useState } from "react";
 import { IoIosAdd } from "react-icons/io";
 import styles from "../styles/AddButton.module.css";
+import Modal from "./Modal";
 
 
 export default function AddButton() {
-  const { toggleTransaction } = useContext(GlobalContext);
+  const [show, setShow] = useState(false)
   
-  
-  const test = () => {
-    console.log("Hey")
-    toggleTransaction()
+  const toggle = () => {
+    setShow(prev => !prev)
   }
   
   return(
@@ -18,9 +16,14 @@ export default function AddButton() {
       <div className={`${styles.container} center`}>
         <IoIosAdd 
           style={{ verticalAlign: "middle" }} 
-          onClick={test}
+          onClick={toggle}
         />
       </div>
       
+      <Modal 
+        add 
+        show={show} 
+        toggle={toggle} 
+      />
     </>)
 }

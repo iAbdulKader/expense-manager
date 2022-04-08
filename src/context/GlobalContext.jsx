@@ -3,7 +3,6 @@ import reducer from "./Reducer";
 
 const initialState = {
   transactions: {},
-  transactionModal: false,
 }
 
 export const GlobalContext = createContext(initialState);
@@ -11,11 +10,6 @@ export const GlobalContext = createContext(initialState);
 export default function GlobalProvider({children}) {
   const [state, dispatch] = useReducer(reducer, initialState)
   
-  function toggleTransaction(){
-    dispatch({
-      type: "TOGGLE_TRANSACTION"
-    })
-  }
   
   function AddTransaction(obj, date){
     dispatch({
@@ -25,20 +19,10 @@ export default function GlobalProvider({children}) {
     })
   }
   
-  function calculateSummery() {
-    dispatch({
-      type: "CALCULATE_SUMMERY"
-    })
-  }
-  
   
   const value = {
     transactions: state.transactions,
-    summery: state.summery,
-    transactionModal: state.transactionModal,
-    toggleTransaction,
     AddTransaction,
-    calculateSummery
   }
   
   return (

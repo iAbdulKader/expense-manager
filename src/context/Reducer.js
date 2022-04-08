@@ -3,10 +3,6 @@ import produce from "immer";
 export default function reducer(state, action) {
   
   switch (action.type) {
-    case 'TOGGLE_TRANSACTION':
-      return produce(state, draft => {
-        draft.transactionModal = !state.transactionModal
-      })
     
     case 'ADD_TRANSACTION':
       return produce(state, draft => {

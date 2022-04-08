@@ -1,12 +1,19 @@
+import { useState } from "react";
+import Modal from "../Modal"
 import styles from "../../styles/Transaction.module.css";
 
 export default function Transaction({ data }) {
+  const [show, setShow] = useState(false)
   
+  const toggle = () => {
+    setShow(prev => !prev)
+  }
   
   return(
     <>
       <div 
         className={styles.container}
+        onClick={toggle}
       >
         <div className={styles.left}>
           <div className={styles.category}>
@@ -26,6 +33,11 @@ export default function Transaction({ data }) {
        
       </div>
       
-
+      <Modal 
+        add={false} 
+        data={data}
+        show={show}
+        toggle={toggle}
+      />
     </>)
 }

@@ -4,9 +4,9 @@ import styles from "../styles/TransactionForm.module.css";
 import Button from "./Button";
 import dateAndTime from "../lib/dateConverter";
 
-export default function TransactionForm({ add, type = "expense", data = {} }) {
+export default function TransactionForm({ add, type = "expense", toggle, data = {} }) {
   
-  const { AddTransaction, toggleTransaction } = useContext(GlobalContext);
+  const { AddTransaction } = useContext(GlobalContext);
   
   const [active, setActive] = useState(type);
   const [date, setDate] = useState(data.date || dateAndTime.nowDate());
@@ -38,7 +38,7 @@ export default function TransactionForm({ add, type = "expense", data = {} }) {
     setNote("");
     setActive("expense")
     
-    toggleTransaction()
+    toggle()
   }
   
   return(
