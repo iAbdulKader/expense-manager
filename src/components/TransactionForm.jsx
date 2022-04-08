@@ -8,7 +8,7 @@ export default function TransactionForm({ add, type = "expense", toggle, data = 
   
   const { AddTransaction } = useContext(GlobalContext);
   
-  const [active, setActive] = useState(type);
+  const [active, setActive] = useState(data.type || type);
   const [date, setDate] = useState(data.date || dateAndTime.nowDate());
   const [time, setTime] = useState(data.time || dateAndTime.nowTime());
   const [category, setCategory] = useState(data.category || "");
