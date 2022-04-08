@@ -17,6 +17,11 @@ export default function reducer(state, action) {
           draft.transactions[action.date].push(action.payload)
         }
       })
+      
+    case 'CALCULATE_SUMMERY':
+      return produce(state, draft => {
+        
+      })
     
     default:
       return state

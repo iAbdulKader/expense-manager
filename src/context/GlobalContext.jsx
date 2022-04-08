@@ -4,6 +4,11 @@ import reducer from "./Reducer";
 const initialState = {
   transactions: {},
   transactionModal: false,
+  summery: {
+    income: 0,
+    expense: 0,
+    balance: income - expense
+  }
 }
 
 export const GlobalContext = createContext(initialState);
@@ -25,10 +30,17 @@ export default function GlobalProvider({children}) {
     })
   }
   
+  function calculateSummery() {
+    dispatch({
+      type: "CALCULATE_SUMMERY"
+    })
+  }
+  
   
   
   const value = {
     transactions: state.transactions,
+    summery: state.summery,
     transactionModal: state.transactionModal,
     toggleTransaction,
     AddTransaction
