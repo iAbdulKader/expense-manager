@@ -1,4 +1,4 @@
-<div align="center"><h1> <img src=https://telegra.ph/file/150589dcc6b559c6ef4db.jpg width="32px"/> </h1> </div>
+<div align="center"><h1> <img src=https://telegra.ph/file/150589dcc6b559c6ef4db.jpg width="64px"/> </h1> </div>
 <div align="center"><h1> Expense Manager </h1> </div>
 
 # About
